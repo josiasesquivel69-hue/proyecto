@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AutoRent Global — Alquiler Inteligente de Vehículos</title>
+  <meta name="description" content="Plataforma empresarial de alquiler y gestión de vehículos turísticos, corporativos y de flota comercial en Costa Rica." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════
+       NAVBAR
+  ═══════════════════════════════════ -->
+  <header class="navbar" id="navbar">
+    <div class="container navbar-inner">
+      <a href="#home" class="brand" onclick="showSection('home')">
+        <span class="brand-icon"><i class="fa-solid fa-car-side"></i></span>
+        <span class="brand-text">AutoRent <strong>Global</strong></span>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#" onclick="showSection('home')" class="nav-link active" data-section="home"><i class="fa-solid fa-house"></i> Inicio</a>
+        <a href="#" onclick="showSection('catalog')" class="nav-link" data-section="catalog"><i class="fa-solid fa-car"></i> Catálogo</a>
+        <a href="#" onclick="showSection('services')" class="nav-link" data-section="services"><i class="fa-solid fa-shield-halved"></i> Servicios</a>
+        <a href="#" onclick="showSection('contact')" class="nav-link" data-section="contact"><i class="fa-solid fa-location-dot"></i> Contacto</a>
+      </nav>
+
+      <div class="navbar-actions">
+        <a href="#" onclick="showSection('catalog')" class="btn btn-outline btn-sm"><i class="fa-solid fa-list"></i> Ver flota</a>
+        <a href="#" onclick="openBookingModal(null)" class="btn btn-primary btn-sm"><i class="fa-solid fa-calendar-check"></i> Reservar</a>
+        <button class="hamburger" id="hamburger" aria-label="Menú">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════
+       SECCIÓN: HOME
+  ═══════════════════════════════════ -->
+  <main>
+    <section id="home" class="section active">
+
+      <!-- HERO -->
+      <div class="hero">
+        <div class="hero-bg"></div>
+        <div class="container hero-content">
+          <div class="hero-eyebrow">
+            <span class="eyebrow-dot"></span>
+            Plataforma de Movilidad Empresarial · Costa Rica
+          </div>
+          <h1 class="hero-title">
+            El vehículo correcto,<br/>
+            en el momento exacto.
+          </h1>
+          <p class="hero-subtitle">
+            Alquiler turístico, corporativo y flotas comerciales ligeras. 
+            Inspección fotográfica, contrato digital y cobertura desde el primer kilómetro.
+          </p>
+
+          <!-- BOOKING WIDGET -->
+          <div class="booking-widget">
+            <div class="widget-row">
+              <div class="widget-field">
+                <label class="widget-label">Sucursal de recogida</label>
+                <select id="bwBranch" class="widget-input">
+                  <option>San José — Aeropuerto Juan Santamaría (SJO)</option>
+                  <option>Liberia — Aeropuerto Daniel Oduber (LIR)</option>
+                  <option>San José — Oficina Centro (SJC)</option>
+                </select>
+              </div>
+              <div class="widget-field widget-field-sm">
+                <label class="widget-label">Recogida</label>
+                <input type="date" id="bwPickup" class="widget-input" />
+              </div>
+              <div class="widget-field widget-field-sm">
+                <label class="widget-label">Devolución</label>
+                <input type="date" id="bwReturn" class="widget-input" />
+              </div>
+              <div class="widget-field widget-field-xs">
+                <label class="widget-label">Categoría</label>
+                <select id="bwCategory" class="widget-input">
+                  <option value="">Todas</option>
+                  <option>Económico</option>
+                  <option>Compacto</option>
+                  <option>SUV Mediano</option>
+                  <option>SUV Premium</option>
+                  <option>Pickup 4×4</option>
+                  <option>Minivan</option>
+                </select>
+              </div>
+              <button class="btn btn-primary widget-btn" onclick="handleSearch()">
+                <i class="fa-solid fa-magnifying-glass"></i> Buscar disponibilidad
+              </button>
+            </div>
+          </div>
+
+          <div class="hero-trust">
+            <div class="trust-item"><i class="fa-solid fa-circle-check trust-icon"></i> Contratos digitales</div>
+            <div class="trust-item"><i class="fa-solid fa-circle-check trust-icon"></i> Sin cargos ocultos</div>
+            <div class="trust-item"><i class="fa-solid fa-circle-check trust-icon"></i> 24 h asistencia en ruta</div>
+            <div class="trust-item"><i class="fa-solid fa-circle-check trust-icon"></i> Seguro incluido</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- NÚMEROS CLAVE -->
+      <div class="stats-bar">
+        <div class="container stats-inner">
+          <div class="stat">
+            <span class="stat-num">180+</span>
+            <span class="stat-label">Vehículos activos</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-num">3</span>
+            <span class="stat-label">Sucursales</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-num">14,000+</span>
+            <span class="stat-label">Contratos cerrados</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-num">98.4%</span>
+            <span class="stat-label">Satisfacción de clientes</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- FLOTA DESTACADA -->
+      <div class="section-block bg-white">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-eyebrow">Flota disponible</div>
+            <h2 class="section-title">Categorías de vehículos</h2>
+            <p class="section-subtitle">Desde económicos compactos hasta SUV todo terreno para destinos de aventura.</p>
+          </div>
+          <div class="fleet-grid" id="homeFleetGrid">
+            <!-- Populated by JS -->
+          </div>
+          <div class="section-cta">
+            <button class="btn btn-outline" onclick="showSection('catalog')">Ver catálogo completo &rarr;</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- COBERTURAS -->
+      <div class="section-block bg-surface">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-eyebrow">Protección y cobertura</div>
+            <h2 class="section-title">Planes de cobertura incluidos</h2>
+            <p class="section-subtitle">Elija la cobertura que mejor proteja su experiencia de alquiler.</p>
+          </div>
+          <div class="coverages-grid">
+            <div class="coverage-card">
+              <div class="coverage-badge coverage-basic">CDW Básica</div>
+              <div class="coverage-price">$12 <span>/día</span></div>
+              <div class="coverage-desc">Cobertura por colisión y volcadura con deducible de $500. Ideal para viajeros con experiencia.</div>
+              <ul class="coverage-list">
+                <li>✓ Daños por colisión</li>
+                <li>✓ Robo parcial</li>
+                <li>✗ Daños a terceros</li>
+                <li>✗ Efectos personales</li>
+              </ul>
+            </div>
+            <div class="coverage-card coverage-card-featured">
+              <div class="coverage-badge coverage-full">Full Coverage</div>
+              <div class="coverage-price">$22 <span>/día</span></div>
+              <div class="coverage-desc">Sin deducible. La opción más elegida por clientes corporativos y viajeros frecuentes.</div>
+              <ul class="coverage-list">
+                <li>✓ Sin deducible</li>
+                <li>✓ Daños por colisión</li>
+                <li>✓ Responsabilidad civil</li>
+                <li>✗ Efectos personales</li>
+              </ul>
+            </div>
+            <div class="coverage-card">
+              <div class="coverage-badge coverage-premium">Premium Plus</div>
+              <div class="coverage-price">$30 <span>/día</span></div>
+              <div class="coverage-desc">Cobertura total sin límites. Incluye efectos personales y asistencia legal inmediata.</div>
+              <ul class="coverage-list">
+                <li>✓ Sin deducible</li>
+                <li>✓ Efectos personales</li>
+                <li>✓ Asistencia legal</li>
+                <li>✓ Grúa y remolque</li>
+              </ul>
+            </div>
+            <div class="coverage-card">
+              <div class="coverage-badge coverage-tpl">Terceros (TPL)</div>
+              <div class="coverage-price">$8 <span>/día</span></div>
+              <div class="coverage-desc">Cobertura básica por daños a terceros. Válida como complemento a póliza personal.</div>
+              <ul class="coverage-list">
+                <li>✓ Daños a terceros</li>
+                <li>✓ Lesiones físicas</li>
+                <li>✗ Daños al vehículo</li>
+                <li>✗ Robo</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CORPORATIVO B2B -->
+      <div class="section-block bg-navy">
+        <div class="container">
+          <div class="b2b-grid">
+            <div class="b2b-text">
+              <div class="section-eyebrow b2b-eyebrow">Movilidad corporativa</div>
+              <h2 class="section-title text-white">Gestión de flotas para empresas</h2>
+              <p class="section-subtitle text-gray-300">
+                Factura mensual consolidada, tarifas preferenciales, gestor de cuenta dedicado 
+                e informes de uso personalizados para su departamento de administración.
+              </p>
+              <ul class="b2b-features">
+                <li><span class="feature-dot"></span> Descuentos desde el 10% en contratos corporativos</li>
+                <li><span class="feature-dot"></span> Facturación a nombre de la empresa con exoneración de IVA</li>
+                <li><span class="feature-dot"></span> Portal de administración con múltiples conductores autorizados</li>
+                <li><span class="feature-dot"></span> Asignación prioritaria en temporada alta</li>
+              </ul>
+              <button class="btn btn-orange mt-24" onclick="openContactModal()">Solicitar plan corporativo</button>
+            </div>
+            <div class="b2b-visual">
+              <div class="b2b-card">
+                <div class="b2b-card-header">
+                  <span class="b2b-label">Cuenta Corporativa</span>
+                  <span class="b2b-status">Activa</span>
+                </div>
+                <div class="b2b-company">Grupo Empresarial CR S.A.</div>
+                <div class="b2b-stats-grid">
+                  <div class="b2b-stat">
+                    <span class="b2b-stat-num">12</span>
+                    <span class="b2b-stat-label">Vehículos activos</span>
+                  </div>
+                  <div class="b2b-stat">
+                    <span class="b2b-stat-num">10%</span>
+                    <span class="b2b-stat-label">Descuento aplicado</span>
+                  </div>
+                  <div class="b2b-stat">
+                    <span class="b2b-stat-num">$4,840</span>
+                    <span class="b2b-stat-label">Factura del mes</span>
+                  </div>
+                  <div class="b2b-stat">
+                    <span class="b2b-stat-num">8</span>
+                    <span class="b2b-stat-label">Conductores</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ═══════════════════════════════════
+         SECCIÓN: CATÁLOGO
+    ═══════════════════════════════════ -->
+    <section id="catalog" class="section">
+      <div class="catalog-header bg-navy">
+        <div class="container">
+          <div class="section-eyebrow b2b-eyebrow">Catálogo de flota</div>
+          <h1 class="section-title text-white">Vehículos disponibles</h1>
+          <p class="section-subtitle text-gray-300">Filtre por categoría, sucursal, transmisión o combustible.</p>
+        </div>
+      </div>
+
+      <div class="section-block bg-surface">
+        <div class="container">
+          <!-- FILTROS -->
+          <div class="filters-bar">
+            <div class="filter-group">
+              <label class="filter-label">Categoría</label>
+              <select id="filterCategory" class="filter-select" onchange="applyFilters()">
+                <option value="">Todas las categorías</option>
+                <option>Económico</option>
+                <option>Compacto</option>
+                <option>SUV Mediano</option>
+                <option>SUV Premium</option>
+                <option>Pickup 4×4</option>
+                <option>Minivan</option>
+              </select>
+            </div>
+            <div class="filter-group">
+              <label class="filter-label">Sucursal</label>
+              <select id="filterBranch" class="filter-select" onchange="applyFilters()">
+                <option value="">Todas las sucursales</option>
+                <option>SJO — San José Aeropuerto</option>
+                <option>LIR — Liberia Aeropuerto</option>
+                <option>SJC — San José Centro</option>
+              </select>
+            </div>
+            <div class="filter-group">
+              <label class="filter-label">Transmisión</label>
+              <select id="filterTransmission" class="filter-select" onchange="applyFilters()">
+                <option value="">Cualquiera</option>
+                <option>Automático</option>
+                <option>Manual</option>
+              </select>
+            </div>
+            <div class="filter-group">
+              <label class="filter-label">Combustible</label>
+              <select id="filterFuel" class="filter-select" onchange="applyFilters()">
+                <option value="">Cualquiera</option>
+                <option>Gasolina</option>
+                <option>Diésel</option>
+                <option>Híbrido</option>
+                <option>Eléctrico</option>
+              </select>
+            </div>
+            <div class="filter-group">
+              <input type="search" id="filterSearch" class="filter-input" placeholder="Buscar marca o modelo..." oninput="applyFilters()" />
+            </div>
+            <button class="btn btn-ghost btn-sm" onclick="clearFilters()">Limpiar filtros</button>
+          </div>
+
+          <!-- RESULTADOS -->
+          <div class="results-bar">
+            <span id="resultsCount" class="results-count">Mostrando todos los vehículos</span>
+          </div>
+
+          <div class="catalog-grid" id="catalogGrid">
+            <!-- Populated by JS -->
+          </div>
+
+          <div id="emptyState" class="empty-state hidden">
+            <div class="empty-icon">&#9632;</div>
+            <h3>Sin resultados</h3>
+            <p>No se encontraron vehículos con los filtros seleccionados.</p>
+            <button class="btn btn-outline" onclick="clearFilters()">Eliminar filtros</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════
+         SECCIÓN: SERVICIOS
+    ═══════════════════════════════════ -->
+    <section id="services" class="section">
+      <div class="catalog-header bg-navy">
+        <div class="container">
+          <div class="section-eyebrow b2b-eyebrow">Lo que ofrecemos</div>
+          <h1 class="section-title text-white">Servicios y operaciones</h1>
+          <p class="section-subtitle text-gray-300">Un ciclo completo de alquiler gestionado con tecnología y experiencia automotriz.</p>
+        </div>
+      </div>
+
+      <div class="section-block bg-white">
+        <div class="container">
+          <div class="services-grid">
+            <div class="service-card">
+              <div class="service-num">01</div>
+              <h3 class="service-title">Reserva en línea</h3>
+              <p class="service-desc">Motor de cotización en tiempo real con desglose de IVA, tarifas aeroportuarias y coberturas. Confirmación inmediata por correo electrónico.</p>
+            </div>
+            <div class="service-card">
+              <div class="service-num">02</div>
+              <h3 class="service-title">Contrato digital</h3>
+              <p class="service-desc">Firma electrónica en tablet de mostrador. El contrato queda vinculado al expediente del cliente y al historial del vehículo.</p>
+            </div>
+            <div class="service-card">
+              <div class="service-num">03</div>
+              <h3 class="service-title">Inspección fotográfica 360°</h3>
+              <p class="service-desc">Registro fotográfico de 8 zonas críticas del vehículo en cada entrega y devolución. Evita disputas y protege al cliente.</p>
+            </div>
+            <div class="service-card">
+              <div class="service-num">04</div>
+              <h3 class="service-title">Gestión de incidentes</h3>
+              <p class="service-desc">Protocolo de reporte, estimación de costos y seguimiento de reclamaciones sin cobro automático. Auditado por el equipo de siniestros.</p>
+            </div>
+            <div class="service-card">
+              <div class="service-num">05</div>
+              <h3 class="service-title">Depósito de garantía</h3>
+              <p class="service-desc">Preautorización sobre tarjeta de crédito. Liberación automática al cierre del contrato sin novedades. Sin retención innecesaria de fondos.</p>
+            </div>
+            <div class="service-card">
+              <div class="service-num">06</div>
+              <h3 class="service-title">Mantenimiento preventivo</h3>
+              <p class="service-desc">Programación automática por kilometraje y tiempo. Los vehículos en mantenimiento quedan bloqueados del catálogo hasta su liberación técnica.</p>
+            </div>
+            <div class="service-card">
+              <div class="service-num">07</div>
+              <h3 class="service-title">Flotas corporativas</h3>
+              <p class="service-desc">Contratos de largo plazo para empresas. Tarifas preferenciales, facturación consolidada mensual y gestor de cuenta dedicado.</p>
+            </div>
+            <div class="service-card">
+              <div class="service-num">08</div>
+              <h3 class="service-title">Múltiples sucursales</h3>
+              <p class="service-desc">Recogida y devolución en aeropuertos de San José y Liberia, o en nuestra oficina del centro de San José, con cargo por devolución diferente.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROCESO PASO A PASO -->
+      <div class="section-block bg-surface">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-eyebrow">Proceso de alquiler</div>
+            <h2 class="section-title">Del primer clic a las llaves del vehículo</h2>
+          </div>
+          <div class="process-steps">
+            <div class="step">
+              <div class="step-num">1</div>
+              <div class="step-content">
+                <h4>Busca y cotiza</h4>
+                <p>Ingresa fechas, sucursal y categoría. Obtén precio final con IVA y coberturas incluidas.</p>
+              </div>
+            </div>
+            <div class="step-arrow">→</div>
+            <div class="step">
+              <div class="step-num">2</div>
+              <div class="step-content">
+                <h4>Confirma la reserva</h4>
+                <p>Recibes el voucher con tu código de confirmación en menos de 2 minutos.</p>
+              </div>
+            </div>
+            <div class="step-arrow">→</div>
+            <div class="step">
+              <div class="step-num">3</div>
+              <div class="step-content">
+                <h4>Llega y firma</h4>
+                <p>Inspección fotográfica, firma digital del contrato y preautorización del depósito en mostrador.</p>
+              </div>
+            </div>
+            <div class="step-arrow">→</div>
+            <div class="step">
+              <div class="step-num">4</div>
+              <div class="step-content">
+                <h4>Disfruta y devuelve</h4>
+                <p>Revisión de retorno, liberación del depósito y cierre del contrato. Sin sorpresas.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════
+         SECCIÓN: CONTACTO
+    ═══════════════════════════════════ -->
+    <section id="contact" class="section">
+      <div class="catalog-header bg-navy">
+        <div class="container">
+          <div class="section-eyebrow b2b-eyebrow">Estamos disponibles</div>
+          <h1 class="section-title text-white">Contacto y sucursales</h1>
+          <p class="section-subtitle text-gray-300">Atención presencial, telefónica y por correo electrónico.</p>
+        </div>
+      </div>
+
+      <div class="section-block bg-white">
+        <div class="container">
+          <div class="contact-grid">
+            <!-- Formulario -->
+            <div class="contact-form-wrap">
+              <h3 class="contact-subtitle">Envíe su consulta</h3>
+              <form id="contactForm" class="contact-form" onsubmit="submitContactForm(event)">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label>Nombre completo</label>
+                    <input type="text" name="name" placeholder="Anderson Araya" required />
+                  </div>
+                  <div class="form-group">
+                    <label>Correo electrónico</label>
+                    <input type="email" name="email" placeholder="correo@empresa.com" required />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>Teléfono</label>
+                  <input type="tel" name="phone" placeholder="+506 8888-0000" />
+                </div>
+                <div class="form-group">
+                  <label>Tipo de consulta</label>
+                  <select name="type">
+                    <option>Reserva turística</option>
+                    <option>Plan corporativo</option>
+                    <option>Flota comercial</option>
+                    <option>Siniestro o incidente</option>
+                    <option>Información general</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label>Mensaje</label>
+                  <textarea name="message" rows="4" placeholder="Describa su consulta..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary w-full">Enviar consulta</button>
+                <div id="formSuccess" class="form-success hidden">
+                  ✓ Consulta recibida. Nuestro equipo le responderá en menos de 4 horas hábiles.
+                </div>
+              </form>
+            </div>
+
+            <!-- Sucursales -->
+            <div class="branches-list">
+              <h3 class="contact-subtitle">Sucursales</h3>
+              <div class="branch-card">
+                <div class="branch-header">
+                  <span class="branch-code">SJO</span>
+                  <span class="branch-tag">Oficina Principal</span>
+                </div>
+                <div class="branch-name">San José — Aeropuerto Juan Santamaría</div>
+                <div class="branch-detail">Terminal de llegadas internacionales, nivel 1, mostrador #12.</div>
+                <div class="branch-info"><strong>Tel:</strong> +506 2442-0000</div>
+                <div class="branch-info"><strong>Horario:</strong> 06:00 – 23:59 todos los días</div>
+                <div class="branch-info"><strong>GPS:</strong> 9.9981° N, 84.2081° W</div>
+              </div>
+              <div class="branch-card">
+                <div class="branch-header">
+                  <span class="branch-code">LIR</span>
+                </div>
+                <div class="branch-name">Liberia — Aeropuerto Daniel Oduber</div>
+                <div class="branch-detail">Zona de arribo, Guanacaste. Atención a vuelos nacionales e internacionales.</div>
+                <div class="branch-info"><strong>Tel:</strong> +506 2668-0000</div>
+                <div class="branch-info"><strong>Horario:</strong> 06:00 – 22:00 todos los días</div>
+                <div class="branch-info"><strong>GPS:</strong> 10.5933° N, 85.5444° W</div>
+              </div>
+              <div class="branch-card">
+                <div class="branch-header">
+                  <span class="branch-code">SJC</span>
+                </div>
+                <div class="branch-name">San José — Oficina Centro</div>
+                <div class="branch-detail">Av. Central, 150 metros norte del Teatro Nacional, San José.</div>
+                <div class="branch-info"><strong>Tel:</strong> +506 2222-0000</div>
+                <div class="branch-info"><strong>Horario:</strong> Lun–Vie 08:00–18:00 / Sáb 09:00–13:00</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ═══════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <div class="brand footer-brand-logo">
+          <span class="brand-icon"><i class="fa-solid fa-car-side"></i></span>
+          <span class="brand-text">AutoRent <strong>Global</strong></span>
+        </div>
+        <p class="footer-tagline">Plataforma empresarial de alquiler y gestión de vehículos en Costa Rica.</p>
+        <p class="footer-copy">&copy; 2026 AutoRent Global. Todos los derechos reservados.<br/>Anderson Joel Araya Meoño.</p>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-heading">Servicios</h4>
+        <ul class="footer-links">
+          <li><a href="#" onclick="showSection('catalog')"><i class="fa-solid fa-car fa-fw"></i> Catálogo de vehículos</a></li>
+          <li><a href="#" onclick="showSection('services')"><i class="fa-solid fa-briefcase fa-fw"></i> Alquiler corporativo</a></li>
+          <li><a href="#" onclick="showSection('services')"><i class="fa-solid fa-truck fa-fw"></i> Flotas comerciales</a></li>
+          <li><a href="#" onclick="showSection('services')"><i class="fa-solid fa-camera fa-fw"></i> Inspección fotográfica</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-heading">Empresa</h4>
+        <ul class="footer-links">
+          <li><a href="#" onclick="showSection('contact')"><i class="fa-solid fa-location-dot fa-fw"></i> Sucursales</a></li>
+          <li><a href="#" onclick="showSection('contact')"><i class="fa-solid fa-envelope fa-fw"></i> Contacto</a></li>
+          <li><a href="#"><i class="fa-solid fa-file-lines fa-fw"></i> Términos y condiciones</a></li>
+          <li><a href="#"><i class="fa-solid fa-lock fa-fw"></i> Política de privacidad</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-heading">Contacto directo</h4>
+        <ul class="footer-links">
+          <li><i class="fa-solid fa-phone fa-fw"></i> SJO: +506 2442-0000</li>
+          <li><i class="fa-solid fa-phone fa-fw"></i> LIR: +506 2668-0000</li>
+          <li><i class="fa-solid fa-phone fa-fw"></i> SJC: +506 2222-0000</li>
+          <li><i class="fa-solid fa-envelope fa-fw"></i> reservas@autorentglobal.cr</li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════
+       MODAL: DETALLE VEHÍCULO / RESERVA
+  ═══════════════════════════════════ -->
+  <div class="modal-overlay" id="vehicleModal" onclick="closeModal(event)">
+    <div class="modal" id="vehicleModalBox">
+      <button class="modal-close" onclick="closeVehicleModal()">&times;</button>
+      <div id="vehicleModalContent"></div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════
+       MODAL: CONTACTO CORPORATIVO
+  ═══════════════════════════════════ -->
+  <div class="modal-overlay" id="contactModal" onclick="closeModal(event)">
+    <div class="modal modal-sm" id="contactModalBox">
+      <button class="modal-close" onclick="closeContactModal()">&times;</button>
+      <div class="modal-header">
+        <h3 class="modal-title">Solicitar plan corporativo</h3>
+        <p class="modal-subtitle">Un gestor de cuenta le contactará en menos de 24 horas hábiles.</p>
+      </div>
+      <form onsubmit="submitCorporateForm(event)" class="modal-form">
+        <div class="form-group">
+          <label>Empresa</label>
+          <input type="text" placeholder="Nombre de la empresa" required />
+        </div>
+        <div class="form-group">
+          <label>Nombre del contacto</label>
+          <input type="text" placeholder="Nombre y apellido" required />
+        </div>
+        <div class="form-group">
+          <label>Correo</label>
+          <input type="email" placeholder="correo@empresa.com" required />
+        </div>
+        <div class="form-group">
+          <label>Flota estimada (vehículos)</label>
+          <select>
+            <option>1–5 vehículos</option>
+            <option>6–15 vehículos</option>
+            <option>16–40 vehículos</option>
+            <option>Más de 40</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary w-full">Solicitar información</button>
+        <div id="corpSuccess" class="form-success hidden">✓ Solicitud enviada. Le contactaremos pronto.</div>
+      </form>
+    </div>
+  </div>
+
+  <!-- TOAST -->
+  <div class="toast" id="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
