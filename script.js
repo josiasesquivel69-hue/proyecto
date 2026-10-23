@@ -18,8 +18,8 @@ const VEHICLES = [
     status: 'available',
     dailyRate: 35, weeklyRate: 210, monthlyRate: 750,
     plate: 'ABC-123',
-    // Hyundai i10 — hatchback compacto
-    image: 'https://images.unsplash.com/photo-1590362891991-f776e747a588?auto=format&fit=crop&w=700&q=80',
+    // Hyundai i10 2024
+    image: 'images/Hyundai-i10.2024.jpg',
     description: 'Ideal para recorridos urbanos y rutas costeras. Bajo consumo de combustible y fácil estacionamiento.'
   },
   {
@@ -31,8 +31,8 @@ const VEHICLES = [
     status: 'available',
     dailyRate: 35, weeklyRate: 210, monthlyRate: 750,
     plate: 'DEF-456',
-    // Kia Picanto — city car rojo
-    image: 'https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=700&q=80',
+    // 2024 Kia Picanto
+    image: 'images/2024 Kia Picanto.avif',
     description: 'Compacto y ágil, perfecto para explorar Guanacaste y sus playas.'
   },
   {
@@ -44,8 +44,8 @@ const VEHICLES = [
     status: 'available',
     dailyRate: 45, weeklyRate: 280, monthlyRate: 950,
     plate: 'GHI-789',
-    // Toyota Yaris — sedán compacto plateado
-    image: 'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=700&q=80',
+    // 2023 Toyota Yaris
+    image: 'images/2023 Toyota Yaris.jpg',
     description: 'Versátil y económico. Incluye GPS y cámara de reversa para mayor comodidad en carretera.'
   },
   {
@@ -57,8 +57,8 @@ const VEHICLES = [
     status: 'available',
     dailyRate: 45, weeklyRate: 280, monthlyRate: 950,
     plate: 'JKL-012',
-    // Hyundai Accent — sedán azul moderno
-    image: 'https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=700&q=80',
+    // 2025 Hyundai Accent
+    image: 'images/2025 Hyundai Accent.jpg',
     description: 'Unidad nueva del año 2025, con sistema multimedia y conectividad Bluetooth.'
   },
   {
@@ -70,8 +70,8 @@ const VEHICLES = [
     status: 'available',
     dailyRate: 65, weeklyRate: 400, monthlyRate: 1400,
     plate: 'MNO-345',
-    // Hyundai Tucson — SUV crossover negro
-    image: 'https://images.unsplash.com/photo-1616788494672-ec7ca25fdda9?auto=format&fit=crop&w=700&q=80',
+    // 2023 Hyundai Tucson
+    image: 'images/2023 Hyundai Tucson.jpg',
     description: 'SUV mediano con tracción AWD opcional. Ideal para rutas mixtas entre ciudad y zona rural.'
   },
   {
@@ -83,8 +83,8 @@ const VEHICLES = [
     status: 'available',
     dailyRate: 65, weeklyRate: 400, monthlyRate: 1400,
     plate: 'PQR-678',
-    // Toyota RAV4 — SUV híbrido gris
-    image: 'https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?auto=format&fit=crop&w=700&q=80',
+    // 2024 Toyota RAV4
+    image: 'images/2024 Toyota RAV4.jpg',
     description: 'Versión híbrida con excelente eficiencia de combustible. Perfecto para recorridos largos.'
   },
   {
@@ -96,8 +96,8 @@ const VEHICLES = [
     status: 'available',
     dailyRate: 95, weeklyRate: 580, monthlyRate: 2100,
     plate: 'STU-901',
-    // Toyota Land Cruiser Prado — SUV 4x4 grande blanco
-    image: 'https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=700&q=80',
+    // 2024 Toyota Land Cruiser Prado
+    image: 'images/2024 Toyota Land Cruiser Prado.jpg',
     description: 'Referente de la aventura 4×4. Apto para cualquier terreno, con capacidad para 7 pasajeros.'
   },
   {
@@ -109,8 +109,8 @@ const VEHICLES = [
     status: 'rented',
     dailyRate: 95, weeklyRate: 580, monthlyRate: 2100,
     plate: 'VWX-234',
-    // Hyundai Santa Fe — SUV premium de 7 plazas
-    image: 'https://images.unsplash.com/photo-1580274455191-1c62238fa333?auto=format&fit=crop&w=700&q=80',
+    // 2023 Hyundai Santa Fe
+    image: 'images/2023 Hyundai Santa Fe.avif',
     description: 'Lujo y espacio en un mismo vehículo. Tecnología de conducción semi-autónoma.'
   },
   {
@@ -122,8 +122,8 @@ const VEHICLES = [
     status: 'available',
     dailyRate: 85, weeklyRate: 520, monthlyRate: 1800,
     plate: 'YZA-567',
-    // Toyota Hilux — pickup doble cabina gris
-    image: 'https://images.unsplash.com/photo-1612825173281-9a193378527e?auto=format&fit=crop&w=700&q=80',
+    // 2024 Toyota Hilux
+    image: 'images/2024 Toyota Hilux.jpg',
     description: 'La pickup más confiable del mercado. Tracción 4×4 real para cualquier condición de terreno.'
   },
   {
@@ -135,8 +135,8 @@ const VEHICLES = [
     status: 'maintenance',
     dailyRate: 85, weeklyRate: 520, monthlyRate: 1800,
     plate: 'BCD-890',
-    // Mitsubishi L200 — pickup de trabajo negra
-    image: 'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=700&q=80',
+    // 2023 Mitsubishi L200
+    image: 'images/2023 Mitsubishi L200.webp',
     description: 'Pickup robusta para transporte de carga y aventura. Actualmente en mantenimiento programado.'
   },
   {
@@ -148,8 +148,8 @@ const VEHICLES = [
     status: 'available',
     dailyRate: 75, weeklyRate: 460, monthlyRate: 1600,
     plate: 'EFG-123',
-    // Kia Carnival — minivan de 8 plazas plateada
-    image: 'https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=700&q=80',
+    // 2024 Kia Carnival
+    image: 'images/2024 Kia Carnival.jpg',
     description: 'La mejor opción para familias o grupos. 8 plazas con máximo confort y maletero amplio.'
   },
   {
@@ -161,8 +161,8 @@ const VEHICLES = [
     status: 'available',
     dailyRate: 75, weeklyRate: 460, monthlyRate: 1600,
     plate: 'HIJ-456',
-    // Hyundai Staria — minivan premium blanca
-    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=700&q=80',
+    // 2024 Hyundai Staria
+    image: 'images/2024 Hyundai Staria.jpg',
     description: 'Diseño futurista y espacioso. Perfecta para traslados corporativos o tours grupales.'
   }
 ];
@@ -322,7 +322,20 @@ function handleSearch() {
     showToast('Por favor seleccione fechas de recogida y devolución.');
     return;
   }
-  if (new Date(ret) <= new Date(pickup)) {
+  const dPickup = parseLocalDate(pickup);
+  const dRet = parseLocalDate(ret);
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  if (!dPickup || !dRet) {
+    showToast('Formato de fecha inválido.');
+    return;
+  }
+  if (dPickup < today) {
+    showToast('La fecha de recogida no puede ser en el pasado.');
+    return;
+  }
+  if (dRet <= dPickup) {
     showToast('La fecha de devolución debe ser posterior a la de recogida.');
     return;
   }
@@ -443,12 +456,13 @@ function openBookingModal(vehicleId) {
   overlay.classList.add('open');
   document.body.style.overflow = 'hidden';
 
-  // Set default dates
+  // Set default dates y límites
   const today = new Date();
   const pickup = new Date(today); pickup.setDate(today.getDate() + 1);
   const ret    = new Date(today); ret.setDate(today.getDate() + 4);
   document.getElementById('bPickup').value = formatDate(pickup);
   document.getElementById('bReturn').value = formatDate(ret);
+  setupDateLimits('bPickup', 'bReturn');
   updatePriceBreakdown(v);
 }
 
@@ -617,7 +631,23 @@ function nextStep(step) {
     const pickup = document.getElementById('bPickup')?.value;
     const ret    = document.getElementById('bReturn')?.value;
     if (!pickup || !ret) { showToast('Seleccione las fechas de recogida y devolución.'); return; }
-    if (new Date(ret) <= new Date(pickup)) { showToast('La devolución debe ser posterior a la recogida.'); return; }
+    const dPickup = parseLocalDate(pickup);
+    const dRet = parseLocalDate(ret);
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    if (!dPickup || !dRet) {
+      showToast('Formato de fecha inválido.');
+      return;
+    }
+    if (dPickup < today) {
+      showToast('La fecha de recogida no puede ser anterior a hoy.');
+      return;
+    }
+    if (dRet <= dPickup) {
+      showToast('La fecha de devolución debe ser posterior a la de recogida.');
+      return;
+    }
   }
 
   // Ocultar pasos actuales
@@ -706,7 +736,9 @@ function updatePriceBreakdown(vehicle) {
   const pickup = document.getElementById('bPickup')?.value;
   const ret    = document.getElementById('bReturn')?.value;
 
-  if (!pickup || !ret || new Date(ret) <= new Date(pickup)) {
+  const dPickup = parseLocalDate(pickup);
+  const dRet = parseLocalDate(ret);
+  if (!dPickup || !dRet || dRet <= dPickup) {
     container.innerHTML = '';
     return;
   }
@@ -804,20 +836,76 @@ function showToast(message, duration = 3500) {
    UTILIDADES DE FECHA
 ══════════════════════════════ */
 function formatDate(date) {
-  return date.toISOString().split('T')[0];
+  const y = date.getFullYear();
+  const m = String(date.getMonth() + 1).padStart(2, '0');
+  const d = String(date.getDate()).padStart(2, '0');
+  return `${y}-${m}-${d}`;
+}
+
+function parseLocalDate(dateStr) {
+  if (!dateStr) return null;
+  const parts = dateStr.split('-');
+  if (parts.length !== 3) return null;
+  return new Date(parseInt(parts[0], 10), parseInt(parts[1], 10) - 1, parseInt(parts[2], 10));
 }
 
 function formatDateDisplay(dateStr) {
   if (!dateStr) return '—';
-  const [y, m, d] = dateStr.split('-');
+  const parts = dateStr.split('-');
+  if (parts.length !== 3) return dateStr;
+  const y = parts[0];
+  const m = parseInt(parts[1], 10);
+  const d = parseInt(parts[2], 10);
   const months = ['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic'];
-  return `${parseInt(d)} ${months[parseInt(m)-1]} ${y}`;
+  return `${d} ${months[m - 1]} ${y}`;
 }
 
 function dateDiff(from, to) {
-  const d1 = new Date(from);
-  const d2 = new Date(to);
-  return Math.max(1, Math.round((d2 - d1) / (1000 * 60 * 60 * 24)));
+  const d1 = parseLocalDate(from);
+  const d2 = parseLocalDate(to);
+  if (!d1 || !d2) return 1;
+  const diffTime = d2.getTime() - d1.getTime();
+  return Math.max(1, Math.round(diffTime / (1000 * 60 * 60 * 24)));
+}
+
+// Configura límites reales en inputs de fecha (min: hoy/mañana, max: hasta 1 año futuro)
+function setupDateLimits(pickupInputId, returnInputId) {
+  const pInput = document.getElementById(pickupInputId);
+  const rInput = document.getElementById(returnInputId);
+  if (!pInput || !rInput) return;
+
+  const today = new Date();
+  const maxFuture = new Date(today);
+  maxFuture.setFullYear(today.getFullYear() + 1); // Límite: máximo 1 año en el futuro
+
+  const minPickup = formatDate(today);
+  const maxDateStr = formatDate(maxFuture);
+
+  pInput.min = minPickup;
+  pInput.max = maxDateStr;
+  rInput.max = maxDateStr;
+
+  const syncReturnMin = () => {
+    const currentP = pInput.value;
+    if (currentP) {
+      const pDate = parseLocalDate(currentP);
+      if (pDate) {
+        const nextDay = new Date(pDate);
+        nextDay.setDate(pDate.getDate() + 1);
+        rInput.min = formatDate(nextDay);
+        if (rInput.value && parseLocalDate(rInput.value) <= pDate) {
+          rInput.value = formatDate(nextDay);
+        }
+      }
+    } else {
+      const tomorrow = new Date(today);
+      tomorrow.setDate(today.getDate() + 1);
+      rInput.min = formatDate(tomorrow);
+    }
+  };
+
+  pInput.addEventListener('change', syncReturnMin);
+  syncReturnMin();
 }
 
 /* ══════════════════════════════
@@ -843,7 +931,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Precargar catálogo
   renderCatalog(VEHICLES);
 
-  // Fechas mínimas en widgets del hero
+  // Fechas mínimas y límites en widgets del hero
   const today = new Date();
   const tomorrow = new Date(today);
   tomorrow.setDate(today.getDate() + 1);
@@ -853,11 +941,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const pickupEl = document.getElementById('bwPickup');
   const returnEl = document.getElementById('bwReturn');
   if (pickupEl) {
-    pickupEl.min = formatDate(tomorrow);
     pickupEl.value = formatDate(tomorrow);
   }
   if (returnEl) {
-    returnEl.min = formatDate(nextWeek);
     returnEl.value = formatDate(nextWeek);
   }
+  setupDateLimits('bwPickup', 'bwReturn');
 });

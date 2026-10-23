@@ -113,12 +113,21 @@ input, select, textarea {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 32px;
-  height: 32px;
-  background: var(--orange);
-  color: var(--white);
-  border-radius: var(--radius-sm);
-  font-size: 14px;
+  width: 38px;
+  height: 38px;
+  background: var(--white);
+  border: 1px solid rgba(255,255,255,.2);
+  border-radius: var(--radius);
+  overflow: hidden;
+  padding: 4px;
+  flex-shrink: 0;
+  box-shadow: 0 1px 4px rgba(0,0,0,.15);
+}
+.brand-logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
 }
 .brand-text strong { color: var(--orange); }
 
@@ -418,6 +427,8 @@ input, select, textarea {
   border-radius: var(--radius-lg);
   overflow: hidden;
   transition: box-shadow var(--transition), transform var(--transition);
+  display: flex;
+  flex-direction: column;
 }
 .fleet-card:hover {
   box-shadow: var(--shadow-lg);
@@ -425,14 +436,18 @@ input, select, textarea {
 }
 .fleet-card-img {
   position: relative;
-  height: 180px;
-  background: var(--surface);
+  height: 200px;
+  background: #f8f9fa;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .fleet-card-img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
   transition: transform 0.4s ease;
 }
 .fleet-card:hover .fleet-card-img img { transform: scale(1.04); }
@@ -914,7 +929,7 @@ input, select, textarea {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  padding: 24px;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.2s;
@@ -934,9 +949,10 @@ input, select, textarea {
   position: relative;
   transform: scale(0.96);
   transition: transform 0.2s;
+  box-sizing: border-box;
 }
 .modal-overlay.open .modal { transform: scale(1); }
-.modal-sm { max-width: 460px; }
+.modal-sm { max-width: 480px; }
 .modal-close {
   position: absolute;
   top: 16px;
@@ -951,11 +967,11 @@ input, select, textarea {
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1;
+  z-index: 10;
   transition: background var(--transition), color var(--transition);
 }
 .modal-close:hover { background: var(--gray-light); color: var(--graphite); }
-.modal-header { padding: 28px 28px 16px; border-bottom: 1px solid var(--gray-light); }
+.modal-header { padding: 28px 28px 16px; border-bottom: 1px solid var(--gray-light); box-sizing: border-box; }
 .modal-title {
   font-family: var(--font-heading);
   font-size: 1.25rem;
@@ -964,8 +980,8 @@ input, select, textarea {
   margin-bottom: 4px;
 }
 .modal-subtitle { font-size: 0.875rem; color: var(--gray); }
-.modal-form { padding: 20px 28px 28px; display: flex; flex-direction: column; gap: 14px; }
-.modal-body { padding: 20px 28px 28px; }
+.modal-form { padding: 20px 28px 28px; display: flex; flex-direction: column; gap: 14px; box-sizing: border-box; }
+.modal-body { padding: 20px 28px 28px; box-sizing: border-box; }
 
 /* ── VEHICLE MODAL CONTENT ── */
 .vmodal-img {
@@ -979,7 +995,7 @@ input, select, textarea {
   height: 100%;
   object-fit: cover;
 }
-.vmodal-body { padding: 24px 28px; }
+.vmodal-body { padding: 24px 28px; box-sizing: border-box; }
 .vmodal-header {
   display: flex;
   align-items: flex-start;
@@ -1039,7 +1055,11 @@ input, select, textarea {
 .vmodal-cta .btn { flex: 1; }
 
 /* ── BOOKING STEPS ── */
-.booking-steps { padding: 28px; }
+.booking-steps { 
+  padding: 28px 32px 32px; 
+  box-sizing: border-box;
+  width: 100%;
+}
 .step-indicator {
   display: flex;
   align-items: center;
@@ -1077,7 +1097,7 @@ input, select, textarea {
 .step-line { flex: 1; height: 2px; background: var(--gray-light); margin-bottom: 16px; }
 .step-line.done { background: var(--orange); }
 
-.booking-step { display: none; }
+.booking-step { display: none; width: 100%; box-sizing: border-box; }
 .booking-step.active { display: block; }
 .booking-step h4 {
   font-family: var(--font-heading);
@@ -1086,7 +1106,23 @@ input, select, textarea {
   color: var(--navy);
   margin-bottom: 16px;
 }
-.booking-form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.booking-form-grid { 
+  display: grid; 
+  grid-template-columns: repeat(2, minmax(0, 1fr)); 
+  gap: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.booking-form-grid .form-group {
+  min-width: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+.booking-form-grid .form-group input,
+.booking-form-grid .form-group select {
+  width: 100%;
+  box-sizing: border-box;
+}
 .step-nav { display: flex; gap: 10px; justify-content: flex-end; margin-top: 20px; }
 
 /* Price breakdown */
